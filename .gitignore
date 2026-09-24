@@ -1,0 +1,91 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+logs/
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+build2/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+vcpkg_installed
+
+CMakeUserPresets.json
+
+# Robot-specific calibration must be generated on hardware.
+# Keep the intentional robot backup tracked so a board wipe is recoverable.
+calibration.json
+calibration.*.json
+!calibration.robot-backup.json
+config/calibration.json
+config/calibration.*.json
+!config/calibration.robot-backup.json
+
+# Arduino / XIAO build output
+xiao_can/xiao_can_bridge/build*/
+# macOS Finder metadata
+.DS_Store
+
+# Editor settings
+.vscode/
+
+# Extracted CAD; the repository ships cad/MarbleASM.step.zip
+cad/*.step
+
+# Simulation: one mesh is an OBJ; training output and mjlab build caches stay local
+!simulation/asset/**/*.obj
+simulation/runs/
+simulation/cache/
+simulation/mj_envs/deploy/runs/
+simulation/wandb/

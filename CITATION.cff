@@ -1,0 +1,62 @@
+cff-version: 1.2.0
+message: If you use this software, please cite the paper below.
+title: "Omnidirectional Amphibious Locomotion via Internal Mass Actuation"
+type: software
+date-released: 2026-09-23
+authors:
+  - family-names: Weaver
+    given-names: Niko
+    affiliation: Duke University
+  - family-names: Xia
+    given-names: Boxi
+    affiliation: Duke University
+  - family-names: Lo
+    given-names: Li-Yu
+    affiliation: Duke University
+  - family-names: Huang
+    given-names: Yuhao
+    affiliation: Duke University
+  - family-names: Chen
+    given-names: Boyuan
+    affiliation: Duke University
+keywords:
+  - amphibious robotics
+  - omnidirectional locomotion
+  - rolling robot
+  - internal mass actuation
+  - robot design
+license: Apache-2.0
+url: https://github.com/generalroboticslab/MARBLE
+repository-code: https://github.com/generalroboticslab/MARBLE
+identifiers:
+  - type: other
+    value: "arXiv:2609.27358"
+    description: arXiv preprint
+  - type: url
+    value: https://generalroboticslab.com/MARBLE
+    description: Project page
+preferred-citation:
+  type: article
+  title: "Omnidirectional Amphibious Locomotion via Internal Mass Actuation"
+  journal: "arXiv preprint"
+  year: 2026
+  url: https://arxiv.org/abs/2609.27358
+  identifiers:
+    - type: other
+      value: "arXiv:2609.27358"
+  authors:
+    - family-names: Weaver
+      given-names: Niko
+      affiliation: Duke University
+    - family-names: Xia
+      given-names: Boxi
+      affiliation: Duke University
+    - family-names: Lo
+      given-names: Li-Yu
+      affiliation: Duke University
+    - family-names: Huang
+      given-names: Yuhao
+      affiliation: Duke University
+    - family-names: Chen
+      given-names: Boyuan
+      affiliation: Duke University

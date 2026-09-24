@@ -1,0 +1,173 @@
+simulation:
+  timestep: 0.005
+  decimation: 4
+  control_freq: 50.0
+  gravity_compensation:
+  - shoulder
+  - elbow
+  - wrist
+default_pose:
+  root_position:
+  - 0.0
+  - 0.0
+  - 0.194
+  joint_pos:
+    base_link_Slider-5: 0.0
+    base_link_Slider-6: 0.0
+    base_link_Slider-7: 0.0
+observation:
+  actor:
+    angular_velocity:
+      history_length: 3
+      flatten_history_dim: false
+      scale: null
+      clip: null
+      delay_hold_prob: 0.0
+      delay_max_lag: 2
+      delay_min_lag: 0
+      term_dim: 3
+      params: {}
+    commands_xy:
+      history_length: 3
+      flatten_history_dim: false
+      scale: null
+      clip: null
+      delay_hold_prob: 0.0
+      delay_max_lag: 0
+      delay_min_lag: 0
+      term_dim: 2
+      params: {}
+    dofPosition:
+      history_length: 3
+      flatten_history_dim: false
+      scale: null
+      clip: null
+      delay_hold_prob: 0.0
+      delay_max_lag: 2
+      delay_min_lag: 0
+      term_dim: 3
+      params: {}
+    dofVelocity:
+      history_length: 3
+      flatten_history_dim: false
+      scale: null
+      clip: null
+      delay_hold_prob: 0.0
+      delay_max_lag: 2
+      delay_min_lag: 0
+      term_dim: 3
+      params: {}
+    actions:
+      history_length: 3
+      flatten_history_dim: false
+      scale: null
+      clip: null
+      delay_hold_prob: 0.0
+      delay_max_lag: 0
+      delay_min_lag: 0
+      term_dim: 3
+      params: {}
+    base_rotation_matrix:
+      history_length: 3
+      flatten_history_dim: false
+      scale: null
+      clip: null
+      delay_hold_prob: 0.0
+      delay_max_lag: 2
+      delay_min_lag: 0
+      term_dim: 9
+      params: {}
+  critic:
+    angular_velocity:
+      history_length: 3
+      flatten_history_dim: true
+      scale: null
+      clip: null
+      delay_hold_prob: 0.0
+      delay_max_lag: 2
+      delay_min_lag: 0
+      term_dim: 3
+      params: {}
+    commands_xy:
+      history_length: 3
+      flatten_history_dim: true
+      scale: null
+      clip: null
+      delay_hold_prob: 0.0
+      delay_max_lag: 0
+      delay_min_lag: 0
+      term_dim: 2
+      params: {}
+    dofPosition:
+      history_length: 3
+      flatten_history_dim: true
+      scale: null
+      clip: null
+      delay_hold_prob: 0.0
+      delay_max_lag: 2
+      delay_min_lag: 0
+      term_dim: 3
+      params: {}
+    dofVelocity:
+      history_length: 3
+      flatten_history_dim: true
+      scale: null
+      clip: null
+      delay_hold_prob: 0.0
+      delay_max_lag: 2
+      delay_min_lag: 0
+      term_dim: 3
+      params: {}
+    actions:
+      history_length: 3
+      flatten_history_dim: true
+      scale: null
+      clip: null
+      delay_hold_prob: 0.0
+      delay_max_lag: 0
+      delay_min_lag: 0
+      term_dim: 3
+      params: {}
+    base_rotation_matrix:
+      history_length: 3
+      flatten_history_dim: true
+      scale: null
+      clip: null
+      delay_hold_prob: 0.0
+      delay_max_lag: 2
+      delay_min_lag: 0
+      term_dim: 9
+      params: {}
+  estimator_target:
+    base_lin_vel:
+      history_length: 0
+      flatten_history_dim: true
+      scale: null
+      clip: null
+      delay_hold_prob: 0.0
+      delay_max_lag: 0
+      delay_min_lag: 0
+      term_dim: 3
+      params: {}
+action:
+  dim: 3
+  low_pass_alpha: 1.0
+  clip_actions: 1.0
+  controlled_joints:
+  - base_link_Slider-5
+  - base_link_Slider-6
+  - base_link_Slider-7
+actuators:
+- joints:
+  - base_link_Slider-\d+
+  kp: 78956.83520871487
+  kd: 3947.8417604357433
+  action_scale: 0.106
+  effort_limit: 31.41592653589793
+  armature: 0.03136560278666198
+  joint_damping: 0.0
+  joint_friction: 0.2
+foot_bodies: []
+obs_dim: 23
+policy_obs_group: actor
+has_velocity_estimator: true

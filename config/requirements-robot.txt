@@ -1,0 +1,14 @@
+nanobind
+numpy
+pyserial
+pyyaml
+tqdm
+msgpack  # run logs written by src/ballbot_terminal.py, read by scripts/analyze_policy_log.py
+tyro  # command-line interface of src/ballbot_terminal.py
+scipy  # scripts/calibrate_imu.py --viz and --capture-upright
+viser  # live 3D view: scripts/calibrate_imu.py --viz (run.sh option 2)
+mujoco  # scripts/policy_sim_check.py (offline check)
+orjson  # hardware_bindings/common/publisher.py, used by the py_imu.py stand-alone viewer
+
+# PyTorch is not listed: install a CPU build for your platform separately.
+# Only trained policies need it (--policy trained, --preflight, policy_sim_check.py).

@@ -1,0 +1,9 @@
+{
+  "name": "marble",
+  "version": "1.0",
+  "dependencies": [
+    "eigen3",
+    "cserialport",
+    "fmt"
+  ]
+}

@@ -1,0 +1,273 @@
+<mujoco model="Sim_Model">
+  <compiler angle="radian"/>
+
+  <size nuser_actuator="1"/>
+
+  <default>
+    <geom contype="0" conaffinity="0"/>
+  </default>
+
+  <asset>
+    <mesh name="base_link" file="meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="base" file="meshes/base.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Weight" file="meshes/Weight.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Bolt" file="meshes/Bolt1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="LBolt1" file="meshes/LBolt1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="LBolt2" file="meshes/LBolt2.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="LBolt3" file="meshes/LBolt3.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="LBolt4" file="meshes/LBolt4.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Pillow1" file="meshes/Pillow1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Pillow2" file="meshes/Pillow2.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Pillow3" file="meshes/Pillow3.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Pillow4" file="meshes/Pillow4.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Bearing1" file="meshes/Bearing1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Bearing2" file="meshes/Bearing2.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Bearing3" file="meshes/Bearing3.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Bearing4" file="meshes/Bearing4.stl" scale="0.001 0.001 0.001"/>
+  </asset>
+
+  <worldbody>
+    <geom size="1 1 1" type="plane" group="99" friction="0.3 0.002 5e-05" rgba="1 0.83 0.61 0.5"/>
+    <light pos="-0.5 0.5 3" dir="0 0 -1" type="directional"/>
+    <body name="base_link">
+      <inertial pos="0.0227219 0.0217197 -0.0217885" quat="0.838909 0.23103 -0.411413 0.271287" mass="2.19393" diaginertia="0.0379156 0.0370936 0.0265308"/>
+      <joint name="base_link_free" type="free"/>
+      <geom name="base_link_geom" pos="0.000388916 0.000609655 0.190461" quat="0 0 -0.707107 0.707107" type="mesh" contype="1" conaffinity="1" condim="4" friction="0.3 0.002 5e-05" mesh="base_link"/>
+      <body name="sphere_center" pos="0.000628916 5.96548e-05 0.000180525">
+        <site name="origin_site" pos="0 0 0" size="0.008" rgba="1 1 0 1"/>
+        <site name="imu_site" pos="0.037411 0.111365 -0.071461" quat="0.456209 0.0594277 -0.704605 -0.540253"/>
+      </body>
+      <body name="base-2" pos="0.000388916 -0.0218903 0.0304605" quat="0 0 -0.707107 0.707107" gravcomp="1">
+        <inertial pos="-1.07005e-05 0.0300003 0.0129248" quat="-0.000187147 0.707052 0.000193375 0.707162" mass="0.128212" diaginertia="4.72564e-05 2.65279e-05 2.5293e-05"/>
+        <joint name="base_link_Slider-5" pos="0 0.0300001 0.0037" axis="0 1 0" type="slide" limited="true" range="-0.114 0.106" armature="0.03134" frictionloss="0.2"/>
+        <geom name="base-2_geom" type="mesh" mesh="base"/>
+        <body name="Bolt2-2" pos="0 -0.04 0">
+          <inertial pos="0.0175 0.0855 0.0120317" mass="0.000646985" diaginertia="1.37396e-08 1.37396e-08 2.53547e-09"/>
+          <geom name="Bolt2-2_geom" type="mesh" mesh="Bolt"/>
+        </body>
+        <body name="Bolt-4-2" pos="0 -0.04 0">
+          <inertial pos="0.0175 0.0545 0.0120317" mass="0.000646985" diaginertia="1.37396e-08 1.37396e-08 2.53547e-09"/>
+          <geom name="Bolt-4-2_geom" type="mesh" mesh="Bolt"/>
+        </body>
+        <body name="Bolt3-2" pos="0 -0.04 0">
+          <inertial pos="-0.0175 0.0545 0.0120317" mass="0.000646985" diaginertia="1.37396e-08 1.37396e-08 2.53547e-09"/>
+          <geom name="Bolt3-2_geom" type="mesh" mesh="Bolt"/>
+        </body>
+        <body name="Pillow1-2" pos="0 -0.04 0">
+          <inertial pos="-0.0147422 0.0905834 0.00873522" quat="0.387781 0.429954 -0.546876 0.604724" mass="0.0166997" diaginertia="1.01281e-06 7.16626e-07 6.77395e-07"/>
+          <geom name="Pillow1-2_geom" type="mesh" mesh="Pillow1"/>
+          <body name="Bearing1-2" pos="0 0 -1.62936e-12">
+            <inertial pos="-0.0106124 0.0905 0.00811238" quat="0.653282 0.653282 0.270598 -0.270598" mass="0.000480715" diaginertia="1.60509e-08 1.4431e-08 5.91877e-09"/>
+            <geom name="Bearing1-2_geom" type="mesh" mesh="Bearing1"/>
+          </body>
+        </body>
+        <body name="Bolt1-2" pos="0 -0.04 0">
+          <inertial pos="-0.0175 0.0855 0.0120317" mass="0.000646985" diaginertia="1.37396e-08 1.37396e-08 2.53547e-09"/>
+          <geom name="Bolt1-2_geom" type="mesh" mesh="Bolt"/>
+        </body>
+        <body name="Pillow3-2" pos="0 -0.04 0">
+          <inertial pos="-0.0147422 0.0494163 0.00873522" quat="0.429776 0.387979 -0.604444 0.547186" mass="0.0166997" diaginertia="1.01281e-06 7.16617e-07 6.77402e-07"/>
+          <geom name="Pillow3-2_geom" type="mesh" mesh="Pillow3"/>
+          <body name="Bearing3-2" pos="0 0 0">
+            <inertial pos="-0.0106124 0.0495 0.00811238" quat="0.653282 0.653282 0.270598 -0.270598" mass="0.000480715" diaginertia="1.6051e-08 1.4431e-08 5.91877e-09"/>
+            <geom name="Bearing3-2_geom" type="mesh" mesh="Bearing3"/>
+          </body>
+        </body>
+        <body name="Pillow2-2" pos="0 -0.04 0">
+          <inertial pos="0.0147422 0.0905837 0.00873522" quat="0.604444 0.547187 -0.429776 0.387979" mass="0.0166997" diaginertia="1.01281e-06 7.16617e-07 6.77402e-07"/>
+          <geom name="Pillow2-2_geom" type="mesh" mesh="Pillow2"/>
+          <body name="Bearing2-2" pos="0 0 0">
+            <inertial pos="0.0106124 0.0905 0.00811238" quat="0.653281 0.653281 -0.270598 0.270598" mass="0.000480715" diaginertia="1.6051e-08 1.44311e-08 5.91877e-09"/>
+            <geom name="Bearing2-2_geom" type="mesh" mesh="Bearing2"/>
+          </body>
+        </body>
+        <body name="Pillow4-2" pos="0 -0.04 0">
+          <inertial pos="0.0147422 0.0494166 0.00873522" quat="0.546876 0.604724 -0.387781 0.429954" mass="0.0166997" diaginertia="1.01281e-06 7.16626e-07 6.77395e-07"/>
+          <geom name="Pillow4-2_geom" type="mesh" mesh="Pillow4"/>
+          <body name="Bearing4-2" pos="0 0 0">
+            <inertial pos="0.0106124 0.0495 0.00811238" quat="0.653281 0.653281 -0.270598 0.270598" mass="0.000480715" diaginertia="1.6051e-08 1.44311e-08 5.91877e-09"/>
+            <geom name="Bearing4-2_geom" type="mesh" mesh="Bearing4"/>
+          </body>
+        </body>
+        <body name="Weight-2" pos="0 0 0">
+          <inertial pos="0 0.03 0.03" quat="0.5 0.5 -0.5 0.5" mass="0.491952" diaginertia="0.000219118 0.000165752 0.000100594"/>
+          <geom name="Weight-2_geom" type="mesh" mesh="Weight"/>
+          <body name="LBolt4-2" pos="0.0175 0.0045 0.0259">
+            <inertial pos="0 0 0.00206729" mass="0.00428397" diaginertia="5.87674e-07 5.87674e-07 1.20766e-08"/>
+            <geom name="LBolt4-2_geom" type="mesh" mesh="LBolt4"/>
+          </body>
+          <body name="LBolt1-2" pos="-0.0175 0.0555 0.0259" quat="1 0 0 0">
+            <inertial pos="0 0 0.00206729" mass="0.00428397" diaginertia="5.87674e-07 5.87674e-07 1.20766e-08"/>
+            <geom name="LBolt1-2_geom" type="mesh" mesh="LBolt1"/>
+          </body>
+          <body name="LBolt2-2" pos="0.0175 0.0555 0.0259">
+            <inertial pos="0 0 0.00206729" mass="0.00428397" diaginertia="5.87674e-07 5.87674e-07 1.20766e-08"/>
+            <geom name="LBolt2-2_geom" type="mesh" mesh="LBolt2"/>
+          </body>
+          <body name="LBolt3-2" pos="-0.0175 0.0045 0.0259">
+            <inertial pos="0 0 0.00206729" mass="0.00428397" diaginertia="5.87674e-07 5.87674e-07 1.20766e-08"/>
+            <geom name="LBolt3-2_geom" type="mesh" mesh="LBolt3"/>
+          </body>
+        </body>
+      </body>
+      <body name="base-1" pos="-0.0221111 0.0306367 0.000433425" quat="0 -0.707107 0 0.707107" gravcomp="1">
+        <inertial pos="-1.07005e-05 0.0300003 0.0129248" quat="-0.000187147 0.707052 0.000193375 0.707162" mass="0.128212" diaginertia="4.72564e-05 2.65279e-05 2.5293e-05"/>
+        <joint name="base_link_Slider-6" pos="0 0.0300001 0.0037" axis="0 -1 0" type="slide" limited="true" range="-0.114 0.106" armature="0.03134" frictionloss="0.2"/>
+        <geom name="base-1_geom" type="mesh" mesh="base"/>
+        <body name="Weight-1" pos="0 0 0">
+          <inertial pos="0 0.03 0.03" quat="0.5 0.5 -0.5 0.5" mass="0.491952" diaginertia="0.000219118 0.000165752 0.000100594"/>
+          <geom name="Weight-1_geom" type="mesh" mesh="Weight"/>
+          <body name="LBolt1-1" pos="-0.0175 0.0555 0.0259" quat="1 0 0 0">
+            <inertial pos="0 0 0.00206729" mass="0.00428397" diaginertia="5.87674e-07 5.87674e-07 1.20766e-08"/>
+            <geom name="LBolt1-1_geom" type="mesh" mesh="LBolt1"/>
+          </body>
+          <body name="LBolt2-1" pos="0.0175 0.0555 0.0259">
+            <inertial pos="0 0 0.00206729" mass="0.00428397" diaginertia="5.87674e-07 5.87674e-07 1.20766e-08"/>
+            <geom name="LBolt2-1_geom" type="mesh" mesh="LBolt2"/>
+          </body>
+          <body name="LBolt3-1" pos="-0.0175 0.0045 0.0259">
+            <inertial pos="0 0 0.00206729" mass="0.00428397" diaginertia="5.87674e-07 5.87674e-07 1.20766e-08"/>
+            <geom name="LBolt3-1_geom" type="mesh" mesh="LBolt3"/>
+          </body>
+          <body name="LBolt4-1" pos="0.0175 0.0045 0.0259">
+            <inertial pos="0 0 0.00206729" mass="0.00428397" diaginertia="5.87674e-07 5.87674e-07 1.20766e-08"/>
+            <geom name="LBolt4-1_geom" type="mesh" mesh="LBolt4"/>
+          </body>
+        </body>
+        <body name="Pillow3-1" pos="0 -0.04 0">
+          <inertial pos="-0.0147422 0.0494163 0.00873522" quat="0.429776 0.387979 -0.604444 0.547186" mass="0.0166997" diaginertia="1.01281e-06 7.16617e-07 6.77402e-07"/>
+          <geom name="Pillow3-1_geom" type="mesh" mesh="Pillow3"/>
+          <body name="Bearing3-1" pos="0 0 0">
+            <inertial pos="-0.0106124 0.0495 0.00811238" quat="0.653282 0.653282 0.270598 -0.270598" mass="0.000480715" diaginertia="1.6051e-08 1.4431e-08 5.91877e-09"/>
+            <geom name="Bearing3-1_geom" type="mesh" mesh="Bearing3"/>
+          </body>
+        </body>
+        <body name="Pillow2-1" pos="0 -0.04 0">
+          <inertial pos="0.0147422 0.0905837 0.00873522" quat="0.604444 0.547187 -0.429776 0.387979" mass="0.0166997" diaginertia="1.01281e-06 7.16617e-07 6.77402e-07"/>
+          <geom name="Pillow2-1_geom" type="mesh" mesh="Pillow2"/>
+          <body name="Bearing2-1" pos="0 0 0">
+            <inertial pos="0.0106124 0.0905 0.00811238" quat="0.653281 0.653281 -0.270598 0.270598" mass="0.000480715" diaginertia="1.6051e-08 1.44311e-08 5.91877e-09"/>
+            <geom name="Bearing2-1_geom" type="mesh" mesh="Bearing2"/>
+          </body>
+        </body>
+        <body name="Pillow4-1" pos="0 -0.04 0">
+          <inertial pos="0.0147422 0.0494166 0.00873522" quat="0.546876 0.604724 -0.387781 0.429954" mass="0.0166997" diaginertia="1.01281e-06 7.16626e-07 6.77395e-07"/>
+          <geom name="Pillow4-1_geom" type="mesh" mesh="Pillow4"/>
+          <body name="Bearing4-1" pos="0 0 0">
+            <inertial pos="0.0106124 0.0495 0.00811238" quat="0.653281 0.653281 -0.270598 0.270598" mass="0.000480715" diaginertia="1.6051e-08 1.44311e-08 5.91877e-09"/>
+            <geom name="Bearing4-1_geom" type="mesh" mesh="Bearing4"/>
+          </body>
+        </body>
+        <body name="Pillow1-1" pos="0 -0.04 0">
+          <inertial pos="-0.0147422 0.0905834 0.00873522" quat="0.387781 0.429954 -0.546876 0.604724" mass="0.0166997" diaginertia="1.01281e-06 7.16626e-07 6.77395e-07"/>
+          <geom name="Pillow1-1_geom" type="mesh" mesh="Pillow1"/>
+          <body name="Bearing1-1" pos="0 0 -1.62936e-12">
+            <inertial pos="-0.0106124 0.0905 0.00811238" quat="0.653282 0.653282 0.270598 -0.270598" mass="0.000480715" diaginertia="1.60509e-08 1.4431e-08 5.91877e-09"/>
+            <geom name="Bearing1-1_geom" type="mesh" mesh="Bearing1"/>
+          </body>
+        </body>
+        <body name="Bolt3-1" pos="0 -0.04 0">
+          <inertial pos="-0.0175 0.0545 0.0120317" mass="0.000646985" diaginertia="1.37396e-08 1.37396e-08 2.53547e-09"/>
+          <geom name="Bolt3-1_geom" type="mesh" mesh="Bolt"/>
+        </body>
+        <body name="Bolt2-1" pos="0 -0.04 0">
+          <inertial pos="0.0175 0.0855 0.0120317" mass="0.000646985" diaginertia="1.37396e-08 1.37396e-08 2.53547e-09"/>
+          <geom name="Bolt2-1_geom" type="mesh" mesh="Bolt"/>
+        </body>
+        <body name="Bolt-4-1" pos="0 -0.04 0">
+          <inertial pos="0.0175 0.0545 0.0120317" mass="0.000646985" diaginertia="1.37396e-08 1.37396e-08 2.53547e-09"/>
+          <geom name="Bolt-4-1_geom" type="mesh" mesh="Bolt"/>
+        </body>
+        <body name="Bolt1-1" pos="0 -0.04 0">
+          <inertial pos="-0.0175 0.0855 0.0120317" mass="0.000646985" diaginertia="1.37396e-08 1.37396e-08 2.53547e-09"/>
+          <geom name="Bolt1-1_geom" type="mesh" mesh="Bolt"/>
+        </body>
+      </body>
+      <body name="base" pos="0.0303619 0.000609655 0.0229335" quat="0.707107 0 0 0.707107" gravcomp="1">
+        <inertial pos="-1.07005e-05 0.0300003 0.0129248" quat="-0.000187147 0.707052 0.000193375 0.707162" mass="0.128212" diaginertia="4.72564e-05 2.65279e-05 2.5293e-05"/>
+        <joint name="base_link_Slider-7" pos="0 0.0299999 0.0037" axis="0 1 0" type="slide" limited="true" range="-0.114 0.106" armature="0.03134" frictionloss="0.2"/>
+        <geom name="base_geom" type="mesh" mesh="base"/>
+        <body name="Weight" pos="0 0 0">
+          <inertial pos="0 0.03 0.03" quat="0.5 0.5 -0.5 0.5" mass="0.491952" diaginertia="0.000219118 0.000165752 0.000100594"/>
+          <geom name="Weight_geom" type="mesh" mesh="Weight"/>
+          <body name="LBolt1" pos="-0.0175 0.0555 0.0259" quat="1 0 0 0">
+            <inertial pos="0 0 0.00206729" mass="0.00428397" diaginertia="5.87674e-07 5.87674e-07 1.20766e-08"/>
+            <geom name="LBolt1_geom" type="mesh" mesh="LBolt1"/>
+          </body>
+          <body name="LBolt2" pos="0.0175 0.0555 0.0259">
+            <inertial pos="0 0 0.00206729" mass="0.00428397" diaginertia="5.87674e-07 5.87674e-07 1.20766e-08"/>
+            <geom name="LBolt2_geom" type="mesh" mesh="LBolt2"/>
+          </body>
+          <body name="LBolt3" pos="-0.0175 0.0045 0.0259">
+            <inertial pos="0 0 0.00206729" mass="0.00428397" diaginertia="5.87674e-07 5.87674e-07 1.20766e-08"/>
+            <geom name="LBolt3_geom" type="mesh" mesh="LBolt3"/>
+          </body>
+          <body name="LBolt4" pos="0.0175 0.0045 0.0259">
+            <inertial pos="0 0 0.00206729" mass="0.00428397" diaginertia="5.87674e-07 5.87674e-07 1.20766e-08"/>
+            <geom name="LBolt4_geom" type="mesh" mesh="LBolt4"/>
+          </body>
+        </body>
+        <body name="Pillow2" pos="0 -0.04 0">
+          <inertial pos="0.0147422 0.0905837 0.00873522" quat="0.604444 0.547187 -0.429776 0.387979" mass="0.0166997" diaginertia="1.01281e-06 7.16617e-07 6.77402e-07"/>
+          <geom name="Pillow2_geom" type="mesh" mesh="Pillow2"/>
+          <body name="Bearing2" pos="0 0 0">
+            <inertial pos="0.0106124 0.0905 0.00811238" quat="0.653281 0.653281 -0.270598 0.270598" mass="0.000480715" diaginertia="1.6051e-08 1.44311e-08 5.91877e-09"/>
+            <geom name="Bearing2_geom" type="mesh" mesh="Bearing2"/>
+          </body>
+        </body>
+        <body name="Pillow3" pos="0 -0.04 0">
+          <inertial pos="-0.0147422 0.0494163 0.00873522" quat="0.429776 0.387979 -0.604444 0.547186" mass="0.0166997" diaginertia="1.01281e-06 7.16617e-07 6.77402e-07"/>
+          <geom name="Pillow3_geom" type="mesh" mesh="Pillow3"/>
+          <body name="Bearing3" pos="0 0 0">
+            <inertial pos="-0.0106124 0.0495 0.00811238" quat="0.653282 0.653282 0.270598 -0.270598" mass="0.000480715" diaginertia="1.6051e-08 1.4431e-08 5.91877e-09"/>
+            <geom name="Bearing3_geom" type="mesh" mesh="Bearing3"/>
+          </body>
+        </body>
+        <body name="Pillow4" pos="0 -0.04 0">
+          <inertial pos="0.0147422 0.0494166 0.00873522" quat="0.546876 0.604724 -0.387781 0.429954" mass="0.0166997" diaginertia="1.01281e-06 7.16626e-07 6.77395e-07"/>
+          <geom name="Pillow4_geom" type="mesh" mesh="Pillow4"/>
+          <body name="Bearing4" pos="0 0 0">
+            <inertial pos="0.0106124 0.0495 0.00811238" quat="0.653281 0.653281 -0.270598 0.270598" mass="0.000480715" diaginertia="1.6051e-08 1.44311e-08 5.91877e-09"/>
+            <geom name="Bearing4_geom" type="mesh" mesh="Bearing4"/>
+          </body>
+        </body>
+        <body name="Pillow1" pos="0 -0.04 0">
+          <inertial pos="-0.0147422 0.0905834 0.00873522" quat="0.387781 0.429954 -0.546876 0.604724" mass="0.0166997" diaginertia="1.01281e-06 7.16626e-07 6.77395e-07"/>
+          <geom name="Pillow1_geom" type="mesh" mesh="Pillow1"/>
+          <body name="Bearing1" pos="0 0 -1.62935e-12">
+            <inertial pos="-0.0106124 0.0905 0.00811238" quat="0.653282 0.653282 0.270598 -0.270598" mass="0.000480715" diaginertia="1.60509e-08 1.4431e-08 5.91877e-09"/>
+            <geom name="Bearing1_geom" type="mesh" mesh="Bearing1"/>
+          </body>
+        </body>
+        <body name="Bolt1" pos="0 -0.04 0">
+          <inertial pos="-0.0175 0.0855 0.0120317" mass="0.000646985" diaginertia="1.37396e-08 1.37396e-08 2.53547e-09"/>
+          <geom name="Bolt1_geom" type="mesh" mesh="Bolt"/>
+        </body>
+        <body name="Bolt-4" pos="0 -0.04 0">
+          <inertial pos="0.0175 0.0545 0.0120317" mass="0.000646985" diaginertia="1.37396e-08 1.37396e-08 2.53547e-09"/>
+          <geom name="Bolt-4_geom" type="mesh" mesh="Bolt"/>
+        </body>
+        <body name="Bolt2" pos="0 -0.04 0">
+          <inertial pos="0.0175 0.0855 0.0120317" mass="0.000646985" diaginertia="1.37396e-08 1.37396e-08 2.53547e-09"/>
+          <geom name="Bolt2_geom" type="mesh" mesh="Bolt"/>
+        </body>
+        <body name="Bolt3" pos="0 -0.04 0">
+          <inertial pos="-0.0175 0.0545 0.0120317" mass="0.000646985" diaginertia="1.37396e-08 1.37396e-08 2.53547e-09"/>
+          <geom name="Bolt3_geom" type="mesh" mesh="Bolt"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <general name="slider5_act" joint="base_link_Slider-5" ctrllimited="true" ctrlrange="-0.114 0.106" forcelimited="true" forcerange="-17 17" biastype="affine" gainprm="250" biasprm="0 -250 -50" user="1"/>
+    <general name="slider6_act" joint="base_link_Slider-6" ctrllimited="true" ctrlrange="-0.114 0.106" forcelimited="true" forcerange="-17 17" biastype="affine" gainprm="250" biasprm="0 -250 -50" user="1"/>
+    <general name="slider7_act" joint="base_link_Slider-7" ctrllimited="true" ctrlrange="-0.114 0.106" forcelimited="true" forcerange="-17 17" biastype="affine" gainprm="250" biasprm="0 -250 -50" user="1"/>
+  </actuator>
+
+  <sensor>
+    <accelerometer site="imu_site" name="imu_accel"/>
+    <magnetometer site="imu_site" name="imu_mag"/>
+    <gyro site="imu_site" name="imu_gyro"/>
+  </sensor>
+</mujoco>

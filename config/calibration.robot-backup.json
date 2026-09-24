@@ -1,0 +1,42 @@
+{
+  "schema_version": 2,
+  "imu": {
+    "source": "imu_site of MuJoCo model Sim_Model (policies/*/robot.xml)",
+    "position_base_m": [
+      0.037411,
+      0.111365,
+      -0.071461
+    ],
+    "quat_base_sensor_wxyz": [
+      0.7046051026,
+      -0.456209329,
+      -0.5402527632,
+      -0.0594276822
+    ]
+  },
+  "sliders": {
+    "motor_ids": [
+      8,
+      7,
+      6
+    ],
+    "idle_position_mm": 114.0,
+    "joints": {
+      "base_link_Slider-5": {
+        "motor_id": 8,
+        "encoder_sign": 1,
+        "joint_to_travel_sign": -1
+      },
+      "base_link_Slider-6": {
+        "motor_id": 7,
+        "encoder_sign": 1,
+        "joint_to_travel_sign": -1
+      },
+      "base_link_Slider-7": {
+        "motor_id": 6,
+        "encoder_sign": 1,
+        "joint_to_travel_sign": 1
+      }
+    }
+  }
+}

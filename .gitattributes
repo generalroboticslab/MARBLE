@@ -1,0 +1,3 @@
+# Vendor SDK: keep byte-exact, including CRLF line endings (see hardware_bindings/imu/EasyProfile/NOTICE.md).
+hardware_bindings/imu/EasyProfile/*.h -text
+hardware_bindings/imu/EasyProfile/*.cpp -text

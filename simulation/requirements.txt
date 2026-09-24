@@ -1,0 +1,15 @@
+# Simulation training/play dependencies. Developed against mjlab 1.6.0, mujoco 3.11,
+# mujoco-warp 3.11, torch 2.10, Python 3.12. Needs an NVIDIA GPU.
+mjlab==1.6.0
+mujoco
+mujoco-warp
+torch
+tensordict
+rsl-rl-lib
+gymnasium
+numpy
+tyro
+PyYAML
+tqdm
+wandb
+glfw

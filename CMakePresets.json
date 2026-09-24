@@ -1,0 +1,29 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 22,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "default",
+            "displayName": "default (arm64 or x86_64, auto)",
+            "description": "Auto-detects the host arch and picks the right gcc-12. Pin CMAKE_C_COMPILER to override.",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "$env{HOME}/repo/vcpkg/scripts/buildsystems/vcpkg.cmake",
+                "Python_EXECUTABLE": "$env{HOME}/repo/micromamba/envs/py312/bin/python",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "TRUE"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "default",
+            "configurePreset": "default"
+        }
+    ]
+}

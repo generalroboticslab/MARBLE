@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hardware_bindings"
+version = "0.1.0"
+requires-python = ">=3.9"
+
+[tool.setuptools]
+packages = [
+    "hardware_bindings.imu",
+]
+
+# Flat source dirs mapped to dotted package names. Requires
+# `hardware_bindings` to be importable — handled below by an empty
+# __init__.py that lets setuptools treat it as a namespace package.
+[tool.setuptools.package-dir]
+"hardware_bindings" = "."
+"hardware_bindings.imu" = "imu"
+
+[tool.setuptools.package-data]
+"hardware_bindings.imu" = ["*.abi3.so"]
